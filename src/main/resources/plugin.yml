@@ -1,0 +1,8 @@
+name: Aqua
+version: ${project.version}
+main: com.mk7a.aqua.Aqua
+api-version: 1.13
+prefix: Aqua
+authors: [mk7a]
+description: Fishing anticheat
+website: www.mk7a.com

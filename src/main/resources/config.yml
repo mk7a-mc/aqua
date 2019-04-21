@@ -1,0 +1,3 @@
+# Experimental - detection of auto fishing mods based on movement
+autoFishDetection: true
+configVersionDoNotModify: 1.0
