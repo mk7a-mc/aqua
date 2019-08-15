@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class AfkFishListener implements Listener {
 
     private final AquaPlugin plugin;
-    private final Material[] allowedMediums = {Material.WATER, Material.SEAGRASS, Material.TALL_SEAGRASS, Material.KELP, Material.KELP_PLANT};
+    private static final Material[] allowedMediums = {Material.WATER, Material.SEAGRASS, Material.TALL_SEAGRASS, Material.KELP, Material.KELP_PLANT};
 
     AfkFishListener(AquaPlugin plugin) {
         this.plugin = plugin;
@@ -44,22 +44,17 @@ public class AfkFishListener implements Listener {
                 hook.remove();
                 event.setCancelled(true);
 
-                player.sendTitle("", t("&cAFK fishing is not allowed on this server"), 1, 100, 1);
+                player.sendTitle("", plugin.afkForPlayer, 1, 100, 1);
                 player.playSound(player.getLocation(), Sound.BLOCK_CONDUIT_DEACTIVATE, 1F, 1F);
 
                 Location playerLocation = player.getLocation();
                 playerLocation.setPitch(0F);
                 player.teleport(playerLocation);
 
-                Bukkit.broadcast(t("&8[&bAqua&8] &3Detected player &a" + player.getName() + "&3 for &aAFK Fishing machine"
-                        + "\n&3 UUID: (" + player.getUniqueId().toString() + ")"), AquaPlugin.P_NOTIFY);
+                Bukkit.broadcast(plugin.prefix + plugin.afkForAdmin.replaceAll("%p%", player.getName())
+                        .replaceAll("%u%", player.getUniqueId().toString()), AquaPlugin.P_NOTIFY);
 
             }
         }
-
-    }
-
-    private static String t(String input) {
-        return ChatColor.translateAlternateColorCodes('&', input);
     }
 }

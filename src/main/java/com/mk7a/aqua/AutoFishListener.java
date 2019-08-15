@@ -80,11 +80,11 @@ public class AutoFishListener implements Listener {
 
                     hook.remove();
                     event.setCancelled(true);
-                    player.kickPlayer(t("&aAuto fishing is not allowed on this server"));
+                    player.kickPlayer(plugin.autoForPlayer);
                     playerFishAttempts.clear();
 
-                    Bukkit.broadcast(t("&8[&bAqua&8] &3Kicked player &a" + player.getName() + "&3 for &aAuto Fishing"
-                            + "\n&3 UUID: (" + player.getUniqueId().toString() + ")"), AquaPlugin.P_NOTIFY);
+                    Bukkit.broadcast(plugin.prefix + plugin.autoForAdmin.replaceAll("%p%", player.getName())
+                            .replaceAll("%u%", player.getUniqueId().toString()), AquaPlugin.P_NOTIFY);
                 }
             }
 
@@ -127,9 +127,5 @@ public class AutoFishListener implements Listener {
             this.success = success;
             this.cancelled = cancelled;
         }
-    }
-
-    private static String t(String input) {
-        return ChatColor.translateAlternateColorCodes('&', input);
     }
 }
