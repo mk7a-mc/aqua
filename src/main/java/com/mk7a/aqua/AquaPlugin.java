@@ -7,7 +7,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AquaPlugin extends JavaPlugin {
 
-    protected static final String P_ADMIN = "aqua.admin";
     protected static final String P_NOTIFY = "aqua.notify";
     protected static final String P_BYPASS = "aqua.bypass";
 
@@ -47,8 +46,6 @@ public final class AquaPlugin extends JavaPlugin {
             autoFishListener.setup();
         }
 
-        AquaCommands commands = new AquaCommands(this);
-        commands.setup();
 
     }
 
