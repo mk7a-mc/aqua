@@ -60,9 +60,9 @@ public class AutoFishListener implements Listener {
 
                 Location lastLoc = playerFishAttempts.get(attemptsSize - 1).playerLocation;
 
-                int locCheckSteps = consecutiveSuccess >= 3 ? 4 : 10;
+                //int locCheckSteps = consecutiveSuccess >= 3 ? 4 : 10;
 
-                for (int i = 2; i <= locCheckSteps; i++) {
+                for (int i = 2; i <= 30; i++) {
 
                     if (attemptsSize > i) {
 
