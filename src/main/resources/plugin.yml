@@ -7,9 +7,9 @@ authors: [mk7a]
 description: Fishing anticheat
 website: https://www.spigotmc.org/resources/aqua-anti-afk-auto-fishing.66618/
 permissions:
-  aqua.notify:
-    default: op
-    description: notifies when a player is caught afk or auto fishing
   aqua.bypass:
+    description: Bypass checks
     default: false
-    description: bypass aqua fishing checks
+  aqua.notify:
+    description: Get notified when a player is detected
+    default: op

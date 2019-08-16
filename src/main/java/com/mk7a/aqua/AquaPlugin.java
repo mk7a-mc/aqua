@@ -46,18 +46,15 @@ public final class AquaPlugin extends JavaPlugin {
             autoFishListener.setup();
         }
 
-
     }
 
     protected void reloadMessages() {
 
-        reloadConfig();
-
-        this.prefix = t(getConfig().getString("messages.messagePrefix"));
-        this.afkForPlayer = t(getConfig().getString("messages.afkForPlayer"));
-        this.afkForAdmin = t(getConfig().getString("messages.afkForAdmin"));
-        this.autoForPlayer = t(getConfig().getString("messages.autoForPlayer"));
-        this.autoForAdmin = t(getConfig().getString("messages.autoForAdmin"));
+        prefix = t(getConfig().getString("messages.messagePrefix"));
+        afkForPlayer = t(getConfig().getString("messages.afkForPlayer"));
+        afkForAdmin = t(getConfig().getString("messages.afkForAdmin"));
+        autoForPlayer = t(getConfig().getString("messages.autoForPlayer"));
+        autoForAdmin = t(getConfig().getString("messages.autoForAdmin"));
     }
 
     private static String t(String input) {
